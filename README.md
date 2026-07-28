@@ -53,15 +53,6 @@ Crea una publicación (multipart/form-data).
 | `message`  | string | Sí (máx 500 caracteres) |
 | `image`    | file   | No (JPG, PNG, GIF, WebP, máx 5 MB) |
 
-### `PUT /api/posts/:id/react`
-Incrementa o decrementa una reacción.
-
-```json
-{ "emoji": "❤️", "dir": 1 }
-```
-
-`dir` debe ser `1` (sumar) o `-1` (restar).
-
 ## Estructura del proyecto
 
 ```
@@ -91,13 +82,9 @@ foro/
 
 ```js
 {
-  username: String,        // "Anónimo" por defecto
-  message: String,         // requerido
-  image: String || null,   // ruta al archivo
-  reactions: {             // Mapa { emoji: count }
-    type: Map,
-    of: Number
-  },
-  timestamps: true         // createdAt, updatedAt
+  username: String,      // "Anónimo" por defecto
+  message: String,       // requerido
+  image: String || null, // ruta al archivo
+  timestamps: true       // createdAt, updatedAt
 }
 ```
